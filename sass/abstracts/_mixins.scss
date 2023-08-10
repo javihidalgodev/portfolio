@@ -1,0 +1,69 @@
+@mixin color-scheme ($text, $bg) {
+  background-color: $bg;
+  color: $text;
+
+  header {
+    background-color: $text;
+    a, button {
+      color: $bg;
+    }
+  }
+
+  .icon-cross {
+    color: $bg;
+  }
+
+  .icon-menu {
+    color: $text;
+  }
+  
+  .presentation {
+    a, i {
+      color: $text;
+    }
+  }
+
+  .project {
+    border-color: $text /* !important */;
+
+    a {
+      background-color: $bg;
+
+      &:hover {
+        color: $dark-theme;
+      }
+    }
+  }
+
+  .contact a {
+    color: $text;
+  }
+
+  footer {
+    color: $bg;
+    background-color: $text;
+  }
+}
+
+@mixin socials ($icon_size) {
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  a {
+
+    padding: 6px;
+    border-radius: 100%;
+    
+    transition: .25s;
+    font-size: $icon_size;
+    
+    
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+}

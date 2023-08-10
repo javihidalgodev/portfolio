@@ -1,0 +1,3 @@
+.light {
+  @include color-scheme($dark-theme, $light-theme);
+}

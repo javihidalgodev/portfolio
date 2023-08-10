@@ -1,0 +1,65 @@
+header {
+  position: fixed;
+  width: 100%;
+
+  top: 0px;
+  padding: 20px 0;
+  z-index: 1;
+
+  cursor: default;
+
+  transition: right .25s;
+
+  nav {    
+    margin-right: 40px;
+  
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    a {
+      padding: 10px;
+      transition: .5s;
+      
+      &:hover {
+        color: $black-bg !important;
+        background-color: $gold;
+      }
+    }
+    
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 10px;
+      border: none;
+      background: none;
+      border-radius: 100%;
+      transition: .5s;
+
+      &:hover {
+        color: $black-bg !important;
+        background-color: $gold;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    width: fit-content;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+
+    nav {
+      flex-direction: column;
+      align-items: end;
+      justify-content: center;
+      margin: 0 20px;
+
+    }
+  }
+}

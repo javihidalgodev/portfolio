@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono';
+
+  transition: background-color .5s;
+  
+  cursor: default;
+  user-select: none;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+p {
+  margin: 0.8rem 0;
+}
+
+button, a, i {
+  cursor: pointer;
+}
+
+.title-bright {
+  background-color: $gold;
+  color: $dark-theme;
+  padding: 6px 10px;
+}

@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "sass": "^1.65.1"
+  }, "scripts": {
+    "compile": "sass --watch sass:css"
+  }
+}

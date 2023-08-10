@@ -1,0 +1,11 @@
+#debugger {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  background-color: rgba($color: #ff0000, $alpha: .8);
+  color: #e1e1e1;
+}

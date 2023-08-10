@@ -1,0 +1,17 @@
+footer {
+  padding: 20px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  p {
+    flex: 1;
+    line-height: 2em;
+  }
+
+  .socials {
+    @include socials(1.5em)
+  }
+}

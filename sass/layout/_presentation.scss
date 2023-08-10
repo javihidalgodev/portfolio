@@ -1,0 +1,109 @@
+.presentation {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .presentation-description p {
+    font-size: .9em;
+  }
+
+  h1 {
+    font-size: 8vw;
+    line-height: 1;
+    font-weight: normal;
+    margin: 6px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+  
+  h3 {
+    width: fit-content;
+    padding: 6px 10px;
+    
+    color: #000;
+    background-color: $gold;
+  }
+  
+  p {
+    max-width: 700px;
+    letter-spacing: -.5px;
+    line-height: 1.6;
+  }
+
+  .cv-links {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    
+    @keyframes arrow-move {
+      5% {
+        left: -50px;
+      }
+      
+      10% {
+        left: -40px;
+      }
+
+      15% {
+        left: -50px;
+      }
+      
+      20% {
+        left: -40px;
+      }
+      
+      25% {
+        left: -50px;
+      }
+      
+      30% {
+        left: -40px;
+      }
+
+      to {
+        left: -40px;
+      }
+    }
+
+    button {
+      width: fit-content;
+      margin-right: 30px;
+      padding: 10px;
+      border: 2px solid #000;
+      background-color: #fff;
+      
+      font-family: 'Roboto Mono';
+      font-size: 1.1em;
+      font-weight: 600;
+      
+      transition: .5s;
+      
+      
+      &:hover {
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px rgb(255, 182, 10);
+      }
+
+      & > i {
+        position: absolute;
+        left: -40px;
+        font-size: 1.5em;
+        animation-name: arrow-move;
+        animation-duration: 4s;
+        animation-iteration-count: 3;
+        animation-play-state: running;
+  
+      }
+    }
+    
+    .socials {
+      @include socials(2em)
+    }
+  }
+}

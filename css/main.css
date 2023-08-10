@@ -1,0 +1,413 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono";
+  transition: background-color 0.5s;
+  cursor: default;
+  user-select: none;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0.8rem 0;
+}
+
+button, a, i {
+  cursor: pointer;
+}
+
+.title-bright {
+  background-color: #ffb60a;
+  color: #2A2D34;
+  padding: 6px 10px;
+}
+
+main {
+  max-width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  padding: 20px 0;
+  z-index: 1;
+  cursor: default;
+  transition: right 0.25s;
+}
+header nav {
+  margin-right: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+header nav a {
+  padding: 10px;
+  transition: 0.5s;
+}
+header nav a:hover {
+  color: #2A2D34 !important;
+  background-color: #ffb60a;
+}
+header nav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  background: none;
+  border-radius: 100%;
+  transition: 0.5s;
+}
+header nav button:hover {
+  color: #2A2D34 !important;
+  background-color: #ffb60a;
+}
+@media (max-width: 500px) {
+  header {
+    width: fit-content;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+  }
+  header nav {
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    margin: 0 20px;
+  }
+}
+
+.presentation {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.presentation .presentation-description p {
+  font-size: 0.9em;
+}
+.presentation h1 {
+  font-size: 8vw;
+  line-height: 1;
+  font-weight: normal;
+  margin: 6px;
+}
+.presentation h1 span {
+  font-weight: bold;
+}
+.presentation h3 {
+  width: fit-content;
+  padding: 6px 10px;
+  color: #000;
+  background-color: #ffb60a;
+}
+.presentation p {
+  max-width: 700px;
+  letter-spacing: -0.5px;
+  line-height: 1.6;
+}
+.presentation .cv-links {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+@keyframes arrow-move {
+  5% {
+    left: -50px;
+  }
+  10% {
+    left: -40px;
+  }
+  15% {
+    left: -50px;
+  }
+  20% {
+    left: -40px;
+  }
+  25% {
+    left: -50px;
+  }
+  30% {
+    left: -40px;
+  }
+  to {
+    left: -40px;
+  }
+}
+.presentation .cv-links button {
+  width: fit-content;
+  margin-right: 30px;
+  padding: 10px;
+  border: 2px solid #000;
+  background-color: #fff;
+  font-family: "Roboto Mono";
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.presentation .cv-links button:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px rgb(255, 182, 10);
+}
+.presentation .cv-links button > i {
+  position: absolute;
+  left: -40px;
+  font-size: 1.5em;
+  animation-name: arrow-move;
+  animation-duration: 4s;
+  animation-iteration-count: 3;
+  animation-play-state: running;
+}
+.presentation .cv-links .socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.presentation .cv-links .socials a {
+  padding: 6px;
+  border-radius: 100%;
+  transition: 0.25s;
+  font-size: 2em;
+}
+.presentation .cv-links .socials a:hover {
+  transform: scale(1.15);
+}
+
+.projects {
+  position: relative;
+  /*   @keyframes show {
+      from {
+        opacity: 0;
+        scale: 25%;
+      }
+
+      75% {
+        opacity: 1;
+        scale: 100%;
+      }
+    } */
+}
+.projects .projects-container {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.projects .projects-container img {
+  width: 100%;
+}
+.projects .projects-container .project {
+  min-width: min(300px, 100%);
+  flex: 1;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: #e1e1e1;
+  transition: 0.5s;
+}
+.projects .projects-container .project:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px rgb(255, 182, 10);
+}
+.projects .projects-container .project-info {
+  position: relative;
+  padding: 20px;
+}
+.projects .projects-container .project-info .card-title {
+  font-weight: bold;
+}
+.projects .projects-container .project-info .technologies {
+  margin: 1.2em 0;
+}
+.projects .projects-container .project-info .technologies i {
+  font-size: 1.5em;
+}
+.projects .projects-container .project-info .go-to {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  border-width: 2px;
+  border-style: solid;
+  padding: 6px 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.1em;
+  transition: 0.25s;
+}
+.projects .projects-container .project-info .go-to:hover {
+  background-color: #ffb60a;
+  transform: scale(1.1);
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  margin: 60px auto;
+}
+.contact .contact-methods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: min(3vw, 20px);
+}
+.contact .contact-methods p a {
+  padding: 6px 10px;
+  transition: 0.25s;
+}
+.contact .contact-methods p a:hover {
+  color: #fff;
+  background-color: #00a500;
+}
+
+footer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer p {
+  flex: 1;
+  line-height: 2em;
+}
+footer .socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+footer .socials a {
+  padding: 6px;
+  border-radius: 100%;
+  transition: 0.25s;
+  font-size: 1.5em;
+}
+footer .socials a:hover {
+  transform: scale(1.15);
+}
+
+section h1 {
+  font-size: 2.5vmax;
+}
+section.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: filter 1s, opacity 1s;
+}
+section.show {
+  opacity: 1;
+  filter: blur(0);
+}
+
+#menu {
+  display: flex;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+  width: fit-content;
+  padding: 6px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+}
+
+#debugger {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: #e1e1e1;
+}
+
+.dark {
+  background-color: #2A2D34;
+  color: #f2f2f2;
+}
+.dark header {
+  background-color: #f2f2f2;
+}
+.dark header a, .dark header button {
+  color: #2A2D34;
+}
+.dark .icon-cross {
+  color: #2A2D34;
+}
+.dark .icon-menu {
+  color: #f2f2f2;
+}
+.dark .presentation a, .dark .presentation i {
+  color: #f2f2f2;
+}
+.dark .project {
+  border-color: #f2f2f2;
+}
+.dark .project a {
+  background-color: #2A2D34;
+}
+.dark .project a:hover {
+  color: #2A2D34;
+}
+.dark .contact a {
+  color: #f2f2f2;
+}
+.dark footer {
+  color: #2A2D34;
+  background-color: #f2f2f2;
+}
+
+.light {
+  background-color: #f2f2f2;
+  color: #2A2D34;
+}
+.light header {
+  background-color: #2A2D34;
+}
+.light header a, .light header button {
+  color: #f2f2f2;
+}
+.light .icon-cross {
+  color: #f2f2f2;
+}
+.light .icon-menu {
+  color: #2A2D34;
+}
+.light .presentation a, .light .presentation i {
+  color: #2A2D34;
+}
+.light .project {
+  border-color: #2A2D34;
+}
+.light .project a {
+  background-color: #f2f2f2;
+}
+.light .project a:hover {
+  color: #2A2D34;
+}
+.light .contact a {
+  color: #2A2D34;
+}
+.light footer {
+  color: #f2f2f2;
+  background-color: #2A2D34;
+}
+
+/*# sourceMappingURL=main.css.map */
