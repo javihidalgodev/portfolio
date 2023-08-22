@@ -10,7 +10,7 @@
   }
 
   h1 {
-    font-size: 8vw;
+    font-size: 7vmax;
     line-height: 1;
     font-weight: normal;
     margin: 6px;
@@ -71,7 +71,7 @@
       }
     }
 
-    button {
+    & > a {
       width: fit-content;
       margin-right: 30px;
       padding: 10px;
@@ -98,7 +98,6 @@
         animation-duration: 4s;
         animation-iteration-count: 3;
         animation-play-state: running;
-  
       }
     }
     

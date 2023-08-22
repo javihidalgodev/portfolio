@@ -99,7 +99,7 @@ header nav button:hover {
   font-size: 0.9em;
 }
 .presentation h1 {
-  font-size: 8vw;
+  font-size: 7vmax;
   line-height: 1;
   font-weight: normal;
   margin: 6px;
@@ -148,7 +148,7 @@ header nav button:hover {
     left: -40px;
   }
 }
-.presentation .cv-links button {
+.presentation .cv-links > a {
   width: fit-content;
   margin-right: 30px;
   padding: 10px;
@@ -159,11 +159,11 @@ header nav button:hover {
   font-weight: 600;
   transition: 0.5s;
 }
-.presentation .cv-links button:hover {
+.presentation .cv-links > a:hover {
   transform: translate(-5px, -5px);
   box-shadow: 5px 5px rgb(255, 182, 10);
 }
-.presentation .cv-links button > i {
+.presentation .cv-links > a > i {
   position: absolute;
   left: -40px;
   font-size: 1.5em;
