@@ -91,12 +91,13 @@ header nav button:hover {
 
 .presentation {
   height: 100vh;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .presentation .presentation-description p {
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 .presentation h1 {
   font-size: 7vmax;
@@ -110,6 +111,7 @@ header nav button:hover {
 .presentation h3 {
   width: fit-content;
   padding: 6px 10px;
+  font-size: 2vmax;
   color: #000;
   background-color: #ffb60a;
 }
@@ -125,30 +127,12 @@ header nav button:hover {
   flex-wrap: wrap;
   row-gap: 20px;
 }
-@keyframes arrow-move {
-  5% {
-    left: -50px;
-  }
-  10% {
-    left: -40px;
-  }
-  15% {
-    left: -50px;
-  }
-  20% {
-    left: -40px;
-  }
-  25% {
-    left: -50px;
-  }
-  30% {
-    left: -40px;
-  }
-  to {
-    left: -40px;
-  }
+.presentation .cv-links .cv {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-.presentation .cv-links > a {
+.presentation .cv-links .cv a {
   width: fit-content;
   margin-right: 30px;
   padding: 10px;
@@ -159,18 +143,41 @@ header nav button:hover {
   font-weight: 600;
   transition: 0.5s;
 }
-.presentation .cv-links > a:hover {
+.presentation .cv-links .cv a:hover {
   transform: translate(-5px, -5px);
   box-shadow: 5px 5px rgb(255, 182, 10);
 }
-.presentation .cv-links > a > i {
-  position: absolute;
-  left: -40px;
-  font-size: 1.5em;
+@keyframes arrow-move {
+  5% {
+    transform: translateX(-10px);
+  }
+  10% {
+    transform: translateX(0px);
+  }
+  15% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  30% {
+    transform: translateX(0px);
+  }
+  to {
+    left: 0px;
+  }
+}
+.presentation .cv-links .cv > div {
   animation-name: arrow-move;
   animation-duration: 4s;
   animation-iteration-count: 3;
   animation-play-state: running;
+}
+.presentation .cv-links .cv i {
+  font-size: 1.5em;
 }
 .presentation .cv-links .socials {
   display: flex;
@@ -187,9 +194,22 @@ header nav button:hover {
 .presentation .cv-links .socials a:hover {
   transform: scale(1.15);
 }
+@media (max-width: 500px) {
+  .presentation .cv-links {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .presentation .cv-links .cv > a {
+    font-size: 3vw;
+  }
+  .presentation .cv-links .cv i {
+    left: 24px;
+  }
+}
 
 .projects {
   position: relative;
+  margin-top: 40px;
   /*   @keyframes show {
       from {
         opacity: 0;
@@ -203,7 +223,6 @@ header nav button:hover {
     } */
 }
 .projects .projects-container {
-  margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -285,6 +304,10 @@ footer {
 footer p {
   flex: 1;
   line-height: 2em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 footer .socials {
   display: flex;
@@ -304,6 +327,7 @@ footer .socials a:hover {
 
 section h1 {
   font-size: 2.5vmax;
+  margin-bottom: 30px;
 }
 section.hidden {
   opacity: 0;
@@ -354,7 +378,13 @@ section.show {
 .dark .icon-menu {
   color: #f2f2f2;
 }
-.dark .presentation a, .dark .presentation i {
+.dark .presentation .socials a, .dark .presentation .socials i {
+  color: #f2f2f2;
+}
+.dark .presentation .cv > a {
+  color: #2A2D34;
+}
+.dark .presentation .cv > a > i {
   color: #f2f2f2;
 }
 .dark .project {
@@ -390,7 +420,13 @@ section.show {
 .light .icon-menu {
   color: #2A2D34;
 }
-.light .presentation a, .light .presentation i {
+.light .presentation .socials a, .light .presentation .socials i {
+  color: #2A2D34;
+}
+.light .presentation .cv > a {
+  color: #2A2D34;
+}
+.light .presentation .cv > a > i {
   color: #2A2D34;
 }
 .light .project {

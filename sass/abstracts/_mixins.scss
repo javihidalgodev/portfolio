@@ -18,8 +18,18 @@
   }
   
   .presentation {
-    a, i {
-      color: $text;
+    .socials {
+      a, i {
+        color: $text;
+      }
+    }
+
+    .cv > a {
+      color: $dark-theme;
+
+      & > i {
+        color: $text;
+      }
     }
   }
 
@@ -66,4 +76,10 @@
     }
   }
 
+}
+
+@mixin media500 {
+  @media (max-width: 500px) {
+    @content
+  }
 }

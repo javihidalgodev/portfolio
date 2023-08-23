@@ -9,6 +9,11 @@ footer {
   p {
     flex: 1;
     line-height: 2em;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .socials {

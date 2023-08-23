@@ -36,9 +36,9 @@ const handlerTheme = ()=> {
 //     : btnToSky.style.right = "-60px"
 // }
 
-const toSky = () => {
-  scrollTo(0, 0);
-}
+// const toSky = () => {
+//   scrollTo(0, 0);
+// }
 
 addEventListener("load", themeFunc);
 // addEventListener("scroll", toSkyBtnStatus);
@@ -59,55 +59,61 @@ const handleIntersection = (entries) => {
 const observer = new IntersectionObserver(handleIntersection, {threshold: 0.25})
 hiddenElements.forEach(element => observer.observe(element))
 
-const handleNavbarVisibility = (e) => {
-  switch (e.type) {
-    case('mouseover'):
-      // scrollY > 0
-      //   ? header.addEventListener('mouseout', handleNavbarVisibility)
-      //   : header.removeEventListener('mouseout', handleNavbarVisibility)
+// const handleNavbarVisibility = (e) => {
+//   switch (e.type) {
+//     case('mouseover'):
+//       // scrollY > 0
+//       //   ? header.addEventListener('mouseout', handleNavbarVisibility)
+//       //   : header.removeEventListener('mouseout', handleNavbarVisibility)
 
-      header.style.top = '0px'
-      break;
+//       header.style.top = '0px'
+//       break;
     
-    case('mouseout'):
-      scrollY != 0 &&
-      setTimeout(() => {
-      header.style.top = '-70px'
-      }, 5000)
-      break;
+//     case('mouseout'):
+//       scrollY != 0 &&
+//       setTimeout(() => {
+//       header.style.top = '-70px'
+//       }, 5000)
+//       break;
 
-    case('scroll'):
-      debbuger.innerHTML = 'scrollY position: ' + scrollY
-      const debbugerPosition = scrollY
+//     case('scroll'):
+//       debbuger.innerHTML = 'scrollY position: ' + scrollY
+//       const debbugerPosition = scrollY
     
-      scrollY > 0
-        ? (
-          header.style.top = '-70px'
-        )
-        : (
-          header.style.top = '0px'
-        )
-      break;
-  }
+//       scrollY > 0
+//         ? (
+//           header.style.top = '-70px'
+//         )
+//         : (
+//           header.style.top = '0px'
+//         )
+//       break;
+//   }
 
-}
+// }
 
 // addEventListener('scroll', handleNavbarVisibility)
 // header.addEventListener('mouseover', handleNavbarVisibility)
-
 
 document.querySelectorAll("nav a").forEach(enlace => {
   enlace.addEventListener("click", function(event) {
       event.preventDefault(); // Evita el comportamiento predeterminado del enlace
       
       const destino = document.querySelector(this.getAttribute("href")); // Obtiene el elemento de destino
-      const offset = destino.offsetTop - 50; // Obtiene la posición vertical del elemento
+      const offset = destino.offsetTop; // Obtiene la posición vertical del elemento
       
       // Realiza el desplazamiento suave
-      window.scrollTo({
-          top: offset,
+      if (innerWidth >= 500) {
+        window.scrollTo({
+            top: offset - 120,
+            behavior: "smooth"
+        });
+      } else {
+        window.scrollTo({
+          top: offset - 40,
           behavior: "smooth"
-      });
+        });
+      }
   });
 });
 
@@ -129,7 +135,7 @@ menu.addEventListener('click', () => {
 
 
 const handleViewPort = () => {
-  innerWidth < 500
+  innerWidth <= 500
   ? (
     header.style.right = `-${header.clientWidth}px`,
     header.classList.add('hide'),

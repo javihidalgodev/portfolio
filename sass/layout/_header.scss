@@ -47,7 +47,7 @@ header {
     }
   }
 
-  @media (max-width: 500px) {
+  @include media500 {
     width: fit-content;
     top: 0;
     right: 0;
@@ -59,7 +59,6 @@ header {
       align-items: end;
       justify-content: center;
       margin: 0 20px;
-
     }
   }
 }

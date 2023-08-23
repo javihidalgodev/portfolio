@@ -1,12 +1,15 @@
 .presentation {
   height: 100vh;
+  margin-top: 40px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .presentation-description p {
-    font-size: .9em;
+  .presentation-description {
+    p {
+      font-size: .9rem;
+    }
   }
 
   h1 {
@@ -23,6 +26,7 @@
   h3 {
     width: fit-content;
     padding: 6px 10px;
+    font-size: 2vmax;
     
     color: #000;
     background-color: $gold;
@@ -40,69 +44,94 @@
     margin: 10px 0;
     flex-wrap: wrap;
     row-gap: 20px;
-    
-    @keyframes arrow-move {
-      5% {
-        left: -50px;
-      }
-      
-      10% {
-        left: -40px;
+
+    .cv {
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      a {
+        width: fit-content;
+        margin-right: 30px;
+        padding: 10px;
+        border: 2px solid #000;
+        background-color: #fff;
+        
+        font-family: 'Roboto Mono';
+        font-size: 1.1em;
+        font-weight: 600;
+        
+        transition: .5s;
+        
+        
+        &:hover {
+          transform: translate(-5px, -5px);
+          box-shadow: 5px 5px rgb(255, 182, 10);
+        }
       }
 
-      15% {
-        left: -50px;
-      }
+      @keyframes arrow-move {
+        5% {
+          transform: translateX(-10px);
+        }
+        
+        10% {
+          transform: translateX(0px);
+        }
       
-      20% {
-        left: -40px;
-      }
+        15% {
+          transform: translateX(-10px);
+        }
+        
+        20% {
+          transform: translateX(-0px);
+        }
+        
+        25% {
+          transform: translateX(-10px);
+        }
+        
+        30% {
+          transform: translateX(-0px);
+        }
       
-      25% {
-        left: -50px;
-      }
-      
-      30% {
-        left: -40px;
-      }
-
-      to {
-        left: -40px;
-      }
-    }
-
-    & > a {
-      width: fit-content;
-      margin-right: 30px;
-      padding: 10px;
-      border: 2px solid #000;
-      background-color: #fff;
-      
-      font-family: 'Roboto Mono';
-      font-size: 1.1em;
-      font-weight: 600;
-      
-      transition: .5s;
-      
-      
-      &:hover {
-        transform: translate(-5px, -5px);
-        box-shadow: 5px 5px rgb(255, 182, 10);
+        to {
+          left: -0px;
+        }
       }
 
-      & > i {
-        position: absolute;
-        left: -40px;
-        font-size: 1.5em;
+      & > div {
         animation-name: arrow-move;
         animation-duration: 4s;
         animation-iteration-count: 3;
         animation-play-state: running;
       }
+
+      i {
+        font-size: 1.5em;
+      }
     }
     
     .socials {
       @include socials(2em)
+    }
+
+    @include media500 {
+      flex-direction: column;
+      align-items: baseline;
+      
+      .cv {
+
+        & > a {
+          font-size: 3vw;
+        }
+
+        i {
+          left: 24px;
+        }
+      }
+
     }
   }
 }
