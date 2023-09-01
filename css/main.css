@@ -112,7 +112,7 @@ header nav button:hover {
   width: fit-content;
   padding: 6px 10px;
   font-size: 2vmax;
-  color: #000;
+  color: #2a2d34;
   background-color: #ffb60a;
 }
 .presentation p {
@@ -231,6 +231,8 @@ header nav button:hover {
   width: 100%;
 }
 .projects .projects-container .project {
+  display: flex;
+  flex-direction: column;
   min-width: min(300px, 100%);
   flex: 1;
   border-width: 2px;
@@ -243,17 +245,29 @@ header nav button:hover {
   box-shadow: 5px 5px rgb(255, 182, 10);
 }
 .projects .projects-container .project-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   position: relative;
   padding: 20px;
+}
+.projects .projects-container .project-info p.card-description {
+  flex-grow: 1;
 }
 .projects .projects-container .project-info .card-title {
   font-weight: bold;
 }
 .projects .projects-container .project-info .technologies {
-  margin: 1.2em 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
-.projects .projects-container .project-info .technologies i {
-  font-size: 1.5em;
+.projects .projects-container .project-info .technologies img {
+  width: 20px;
+}
+.projects .projects-container .project-info .technologies img:last-of-type {
+  margin-right: auto;
 }
 .projects .projects-container .project-info .go-to {
   display: flex;
@@ -262,9 +276,6 @@ header nav button:hover {
   border-width: 2px;
   border-style: solid;
   padding: 6px 10px;
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
   font-size: 1.1em;
   transition: 0.25s;
 }

@@ -12,6 +12,9 @@
     }
     
     .project {
+      display: flex;
+      flex-direction: column;
+
       min-width: min(300px, 100%);
       flex: 1;
       border-width: 2px;
@@ -35,33 +38,48 @@
       }
     }
     
-    
     .project-info {
+      display: flex;
+      flex-direction: column;
+
+      flex-grow: 1;
+
       position: relative;
       padding: 20px;
       
+      p.card-description {
+        flex-grow: 1;
+      }
+
       .card-title {
         font-weight: bold;
       }
       
       .technologies {
-        margin: 1.2em 0;
-        
-        i {
-          font-size: 1.5em;
+        display: flex;
+        gap: 10px;
+
+        flex-wrap: wrap;
+        margin-top: 10px;
+
+        img {
+          width: 20px;
+
+          &:last-of-type {
+            margin-right: auto;
+          }
         }
+
       }
       
       .go-to {
+        // margin-left: auto;
         display: flex;
         gap: 6px;
         align-items: center;
         border-width: 2px;
         border-style: solid;
         padding: 6px 10px;
-        position: absolute;
-        bottom: 30px;
-        right: 30px;
         
         font-size: 1.1em;
         transition: .25s;
